@@ -34,9 +34,8 @@ Partial Class MainForm
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Button10 = New System.Windows.Forms.Button()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.StatusStrip1.SuspendLayout()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'QuestionStr
@@ -207,17 +206,6 @@ Partial Class MainForm
         Me.Button10.Text = "Extract INI1"
         Me.Button10.UseVisualStyleBackColor = False
         '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.Gray
-        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 800)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(574, 38)
-        Me.StatusStrip1.SizingGrip = False
-        Me.StatusStrip1.TabIndex = 13
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
         'ToolStripStatusLabel1
         '
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.White
@@ -225,13 +213,24 @@ Partial Class MainForm
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(524, 33)
         Me.ToolStripStatusLabel1.Text = "Checked for updates, HACToolGUI is up to date."
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(22, 803)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(465, 51)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Checking for updates..."
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.Gray
-        Me.ClientSize = New System.Drawing.Size(574, 838)
-        Me.Controls.Add(Me.StatusStrip1)
+        Me.ClientSize = New System.Drawing.Size(574, 869)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button9)
         Me.Controls.Add(Me.Button10)
         Me.Controls.Add(Me.Button7)
@@ -248,8 +247,6 @@ Partial Class MainForm
         Me.MaximizeBox = False
         Me.Name = "MainForm"
         Me.Text = "HACToolGUI Interface"
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -266,6 +263,6 @@ Partial Class MainForm
     Friend WithEvents Button8 As Button
     Friend WithEvents Button9 As Button
     Friend WithEvents Button10 As Button
-    Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents Label1 As Label
 End Class

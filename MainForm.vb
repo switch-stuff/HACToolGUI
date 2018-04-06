@@ -8,12 +8,13 @@ System.Windows.Forms.Keys.Left, System.Windows.Forms.Keys.Right,
 System.Windows.Forms.Keys.B, System.Windows.Forms.Keys.A}
     Dim index As Integer = 0
     Dim sequence() As Boolean = {False, False, False, False, False, False, False, False, False, False}
-    Dim URL As String = "http://simolabs.com.au/hactoolgui/currentversion.txt"
+    Dim UpdateCheck As String = "http://simolabs.com.au/hactoolgui/currentversion.txt"
+    Dim Notify As String = "http://simolabs.com.au/hactoolgui/news.txt"
     Dim Web As WebClient = New WebClient()
-    Dim Rd As StreamReader = New StreamReader(Web.OpenRead(URL))
+    Dim Rd As StreamReader = New StreamReader(Web.OpenRead(UpdateCheck))
     Dim GBATemp As String = "https://gbatemp.net/threads/release-hactoolgui-v0-1-a-very-simple-gui-for-hactool.499526/"
     Dim LatestVersion As String = Rd.ReadToEnd
-    Dim CurrentVersion As String = "0.2b"
+    Dim CurrentVersion As String = "0.2c"
     Public Sub New()
         InitializeComponent()
         Me.KeyPreview = True
@@ -50,14 +51,9 @@ System.Windows.Forms.Keys.B, System.Windows.Forms.Keys.A}
         Else
         End If
         If LatestVersion = CurrentVersion Then
+            Label1.Text = "HACToolGUI is up to date."
         Else
-            Dim UpdateMsg As Integer = MessageBox.Show("An update is available!" + vbNewLine + "Current Version: " + CurrentVersion + vbNewLine + "Newest version: " + LatestVersion + vbNewLine + "Would you like to see GBATemp for more details?", "Version " + LatestVersion + " is available!", MessageBoxButtons.YesNo)
-            If UpdateMsg = DialogResult.No Then
-                ToolStripStatusLabel1.Text = "An update is available."
-            ElseIf UpdateMsg = DialogResult.Yes Then
-                Process.Start(GBATemp)
-                Close()
-            End If
+            Label1.Text = "Version " + LatestVersion + " is available."
         End If
     End Sub
 
@@ -91,5 +87,12 @@ System.Windows.Forms.Keys.B, System.Windows.Forms.Keys.A}
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         KIP1Form.Show()
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+        If Label1.Text = "HACToolGUI is up to date." Then
+        Else
+            Process.Start(GBATemp)
+        End If
     End Sub
 End Class

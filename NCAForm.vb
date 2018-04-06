@@ -7,10 +7,11 @@
         End If
     End Sub
     Private Sub PlainOpt_CheckedChanged(sender As Object, e As EventArgs) Handles PlainOpt.CheckedChanged
+        RadioButton1.Enabled = False
+        RadioButton2.Enabled = False
         RomFSStr.Enabled = False
         RomFSName.Enabled = False
         RomFSStart.Enabled = False
-        RomFSExtStr.Enabled = False
         OutFolderStr.Enabled = False
         ExtFolderName.Enabled = False
         ExtStart.Enabled = False
@@ -20,10 +21,11 @@
         PlainExtStr.Enabled = True
     End Sub
     Private Sub ExtractOpt_CheckedChanged(sender As Object, e As EventArgs) Handles ExtractOpt.CheckedChanged
+        RadioButton1.Enabled = False
+        RadioButton2.Enabled = False
         RomFSStr.Enabled = False
         RomFSName.Enabled = False
         RomFSStart.Enabled = False
-        RomFSExtStr.Enabled = False
         PlainStr.Enabled = False
         PlainName.Enabled = False
         PlainStart.Enabled = False
@@ -63,10 +65,11 @@
     End Sub
 
     Private Sub RomFSOpt_CheckedChanged(sender As Object, e As EventArgs) Handles RomFSOpt.CheckedChanged
+        RadioButton1.Enabled = True
+        RadioButton2.Enabled = True
         RomFSStr.Enabled = True
         RomFSName.Enabled = True
         RomFSStart.Enabled = True
-        RomFSExtStr.Enabled = True
         PlainStr.Enabled = False
         PlainName.Enabled = False
         PlainStart.Enabled = False
@@ -79,7 +82,12 @@
     Private Sub RomFSStart_Click(sender As Object, e As EventArgs) Handles RomFSStart.Click
         If IO.File.Exists("keys.dat") Then
             If RomFSName.Text IsNot "" Then
-                Process.Start("cmd", "/c hactool -k keys.dat " + "--romfs=" + RomFSName.Text + ".romfs" + " " + """" + FileName.Text + """")
+                IO.Directory.CreateDirectory(RomFSName.Text)
+                If RadioButton1.Checked = True Then
+                    Process.Start("cmd", "/c hactool -k keys.dat " + "--romfs=" + RomFSName.Text + "/RomFS.romfs" + " --section0dir=" + RomFSName.Text + " " + """" + FileName.Text + """")
+                Else
+                    Process.Start("cmd", "/c hactool -k keys.dat " + "--romfs=" + RomFSName.Text + "/game.istorage" + " --section0dir=" + RomFSName.Text + " " + """" + FileName.Text + """")
+                End If
             Else
                 MsgBox("You must type a filename!")
             End If

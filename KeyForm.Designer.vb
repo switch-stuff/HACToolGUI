@@ -43,7 +43,7 @@ Partial Class KeyForm
         Me.Label7 = New System.Windows.Forms.Label()
         Me.MKey02_TextBox = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.MKey03_TextBox = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.HintButton = New System.Windows.Forms.Button()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
@@ -167,11 +167,11 @@ Partial Class KeyForm
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(18, 500)
+        Me.Label5.Location = New System.Drawing.Point(16, 500)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(193, 30)
+        Me.Label5.Size = New System.Drawing.Size(196, 30)
         Me.Label5.TabIndex = 19
-        Me.Label5.Text = "KEK System Source:"
+        Me.Label5.Text = "KAK System Source:"
         '
         'KOcean_TextBox
         '
@@ -187,11 +187,11 @@ Partial Class KeyForm
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(23, 456)
+        Me.Label6.Location = New System.Drawing.Point(21, 456)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(188, 30)
+        Me.Label6.Size = New System.Drawing.Size(191, 30)
         Me.Label6.TabIndex = 17
-        Me.Label6.Text = "KEK Ocean Source:"
+        Me.Label6.Text = "KAK Ocean Source:"
         '
         'KSys_TextBox
         '
@@ -207,11 +207,11 @@ Partial Class KeyForm
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(46, 410)
+        Me.Label8.Location = New System.Drawing.Point(44, 410)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(166, 30)
+        Me.Label8.Size = New System.Drawing.Size(169, 30)
         Me.Label8.TabIndex = 13
-        Me.Label8.Text = "KEK App Source:"
+        Me.Label8.Text = "KAK App Source:"
         '
         'MKey01_TextBox
         '
@@ -253,14 +253,14 @@ Partial Class KeyForm
         Me.Label9.TabIndex = 23
         Me.Label9.Text = "Master Key 02:"
         '
-        'TextBox10
+        'MKey03_TextBox
         '
-        Me.TextBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox10.Location = New System.Drawing.Point(235, 193)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(838, 24)
-        Me.TextBox10.TabIndex = 26
+        Me.MKey03_TextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.MKey03_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.MKey03_TextBox.Location = New System.Drawing.Point(235, 193)
+        Me.MKey03_TextBox.Name = "MKey03_TextBox"
+        Me.MKey03_TextBox.Size = New System.Drawing.Size(838, 24)
+        Me.MKey03_TextBox.TabIndex = 26
         '
         'Label10
         '
@@ -353,7 +353,7 @@ Partial Class KeyForm
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.TextBox11)
         Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.TextBox10)
+        Me.Controls.Add(Me.MKey03_TextBox)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.MKey02_TextBox)
         Me.Controls.Add(Me.Label9)
@@ -408,7 +408,7 @@ Partial Class KeyForm
     Friend WithEvents Label7 As Label
     Friend WithEvents MKey02_TextBox As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents MKey03_TextBox As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents HintButton As Button
     Friend WithEvents TextBox11 As TextBox

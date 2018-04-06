@@ -3,6 +3,7 @@
         MKey00_TextBox.Text = "C2CA"
         MKey01_TextBox.Text = "54E1"
         MKey02_TextBox.Text = "4F6B"
+        MKey03_TextBox.Text = "84E0"
         Header_TextBox.Text = "AEAA"
         AKEK_TextBox.Text = "4D87"
         AKey_TextBox.Text = "8961"
@@ -15,6 +16,7 @@
         IO.File.WriteAllText("keys.dat", ("master_key_00 = " + MKey00_TextBox.Text + vbNewLine +
                              "master_key_01 = " + MKey01_TextBox.Text + vbNewLine +
                              "master_key_02 = " + MKey02_TextBox.Text + vbNewLine +
+                             "master_key_03 = " + MKey03_TextBox.Text + vbNewLine +
                              "header_key = " + Header_TextBox.Text + vbNewLine +
                              "aes_kek_generation_source = " + AKEK_TextBox.Text + vbNewLine +
                              "aes_key_generation_source = " + AKey_TextBox.Text + vbNewLine +

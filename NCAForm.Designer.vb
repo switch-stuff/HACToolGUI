@@ -38,12 +38,13 @@ Partial Class NCAForm
         Me.OutFolderStr = New System.Windows.Forms.Label()
         Me.ExtStart = New System.Windows.Forms.Button()
         Me.KeyManLaunch = New System.Windows.Forms.Button()
-        Me.RomFSExtStr = New System.Windows.Forms.Label()
         Me.RomFSName = New System.Windows.Forms.TextBox()
         Me.RomFSStr = New System.Windows.Forms.Label()
         Me.RomFSStart = New System.Windows.Forms.Button()
         Me.RomFSOpt = New System.Windows.Forms.RadioButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -95,7 +96,7 @@ Partial Class NCAForm
         Me.PlainOpt.BackColor = System.Drawing.Color.Gray
         Me.PlainOpt.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PlainOpt.ForeColor = System.Drawing.Color.White
-        Me.PlainOpt.Location = New System.Drawing.Point(13, 166)
+        Me.PlainOpt.Location = New System.Drawing.Point(11, 166)
         Me.PlainOpt.Name = "PlainOpt"
         Me.PlainOpt.Size = New System.Drawing.Size(173, 34)
         Me.PlainOpt.TabIndex = 4
@@ -108,11 +109,11 @@ Partial Class NCAForm
         Me.ExtractOpt.BackColor = System.Drawing.Color.Gray
         Me.ExtractOpt.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ExtractOpt.ForeColor = System.Drawing.Color.White
-        Me.ExtractOpt.Location = New System.Drawing.Point(328, 166)
+        Me.ExtractOpt.Location = New System.Drawing.Point(193, 166)
         Me.ExtractOpt.Name = "ExtractOpt"
-        Me.ExtractOpt.Size = New System.Drawing.Size(463, 34)
+        Me.ExtractOpt.Size = New System.Drawing.Size(235, 34)
         Me.ExtractOpt.TabIndex = 5
-        Me.ExtractOpt.Text = "Decrypt and extract NCA contents to a folder"
+        Me.ExtractOpt.Text = "Extract files to folder"
         Me.ExtractOpt.UseVisualStyleBackColor = False
         '
         'Output
@@ -186,7 +187,7 @@ Partial Class NCAForm
         Me.ExtFolderName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ExtFolderName.Enabled = False
         Me.ExtFolderName.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ExtFolderName.Location = New System.Drawing.Point(177, 307)
+        Me.ExtFolderName.Location = New System.Drawing.Point(177, 260)
         Me.ExtFolderName.Name = "ExtFolderName"
         Me.ExtFolderName.Size = New System.Drawing.Size(506, 28)
         Me.ExtFolderName.TabIndex = 13
@@ -198,7 +199,7 @@ Partial Class NCAForm
         Me.OutFolderStr.Enabled = False
         Me.OutFolderStr.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OutFolderStr.ForeColor = System.Drawing.Color.White
-        Me.OutFolderStr.Location = New System.Drawing.Point(6, 308)
+        Me.OutFolderStr.Location = New System.Drawing.Point(6, 261)
         Me.OutFolderStr.Name = "OutFolderStr"
         Me.OutFolderStr.Size = New System.Drawing.Size(144, 30)
         Me.OutFolderStr.TabIndex = 12
@@ -213,7 +214,7 @@ Partial Class NCAForm
         Me.ExtStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ExtStart.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ExtStart.ForeColor = System.Drawing.Color.White
-        Me.ExtStart.Location = New System.Drawing.Point(689, 300)
+        Me.ExtStart.Location = New System.Drawing.Point(689, 253)
         Me.ExtStart.Name = "ExtStart"
         Me.ExtStart.Size = New System.Drawing.Size(135, 42)
         Me.ExtStart.TabIndex = 11
@@ -235,28 +236,15 @@ Partial Class NCAForm
         Me.KeyManLaunch.Text = "Open Key Manager"
         Me.KeyManLaunch.UseVisualStyleBackColor = False
         '
-        'RomFSExtStr
-        '
-        Me.RomFSExtStr.AutoSize = True
-        Me.RomFSExtStr.BackColor = System.Drawing.Color.Gray
-        Me.RomFSExtStr.Enabled = False
-        Me.RomFSExtStr.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RomFSExtStr.ForeColor = System.Drawing.Color.White
-        Me.RomFSExtStr.Location = New System.Drawing.Point(577, 264)
-        Me.RomFSExtStr.Name = "RomFSExtStr"
-        Me.RomFSExtStr.Size = New System.Drawing.Size(71, 30)
-        Me.RomFSExtStr.TabIndex = 18
-        Me.RomFSExtStr.Text = ".romfs"
-        '
         'RomFSName
         '
         Me.RomFSName.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.RomFSName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RomFSName.Enabled = False
         Me.RomFSName.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RomFSName.Location = New System.Drawing.Point(209, 262)
+        Me.RomFSName.Location = New System.Drawing.Point(349, 304)
         Me.RomFSName.Name = "RomFSName"
-        Me.RomFSName.Size = New System.Drawing.Size(364, 28)
+        Me.RomFSName.Size = New System.Drawing.Size(334, 28)
         Me.RomFSName.TabIndex = 17
         '
         'RomFSStr
@@ -266,11 +254,11 @@ Partial Class NCAForm
         Me.RomFSStr.Enabled = False
         Me.RomFSStr.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RomFSStr.ForeColor = System.Drawing.Color.White
-        Me.RomFSStr.Location = New System.Drawing.Point(6, 262)
+        Me.RomFSStr.Location = New System.Drawing.Point(254, 304)
         Me.RomFSStr.Name = "RomFSStr"
-        Me.RomFSStr.Size = New System.Drawing.Size(170, 30)
+        Me.RomFSStr.Size = New System.Drawing.Size(75, 30)
         Me.RomFSStr.TabIndex = 16
-        Me.RomFSStr.Text = "Output filename:"
+        Me.RomFSStr.Text = "Folder:"
         '
         'RomFSStart
         '
@@ -281,9 +269,9 @@ Partial Class NCAForm
         Me.RomFSStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RomFSStart.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RomFSStart.ForeColor = System.Drawing.Color.White
-        Me.RomFSStart.Location = New System.Drawing.Point(654, 254)
+        Me.RomFSStart.Location = New System.Drawing.Point(689, 299)
         Me.RomFSStart.Name = "RomFSStart"
-        Me.RomFSStart.Size = New System.Drawing.Size(170, 41)
+        Me.RomFSStart.Size = New System.Drawing.Size(135, 41)
         Me.RomFSStart.TabIndex = 15
         Me.RomFSStart.Text = "Start"
         Me.RomFSStart.UseVisualStyleBackColor = False
@@ -294,11 +282,11 @@ Partial Class NCAForm
         Me.RomFSOpt.BackColor = System.Drawing.Color.Gray
         Me.RomFSOpt.Font = New System.Drawing.Font("Segoe UI", 7.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RomFSOpt.ForeColor = System.Drawing.Color.White
-        Me.RomFSOpt.Location = New System.Drawing.Point(208, 166)
+        Me.RomFSOpt.Location = New System.Drawing.Point(460, 167)
         Me.RomFSOpt.Name = "RomFSOpt"
-        Me.RomFSOpt.Size = New System.Drawing.Size(107, 34)
+        Me.RomFSOpt.Size = New System.Drawing.Size(336, 34)
         Me.RomFSOpt.TabIndex = 19
-        Me.RomFSOpt.Text = "RomFS"
+        Me.RomFSOpt.Text = "Generate emulator-ready folder"
         Me.RomFSOpt.UseVisualStyleBackColor = False
         '
         'PictureBox1
@@ -313,6 +301,32 @@ Partial Class NCAForm
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.Visible = False
         '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Enabled = False
+        Me.RadioButton1.Font = New System.Drawing.Font("Segoe UI", 7.875!)
+        Me.RadioButton1.Location = New System.Drawing.Point(11, 300)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(90, 34)
+        Me.RadioButton1.TabIndex = 21
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Yuzu"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Enabled = False
+        Me.RadioButton2.Font = New System.Drawing.Font("Segoe UI", 7.875!)
+        Me.RadioButton2.Location = New System.Drawing.Point(119, 300)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(117, 34)
+        Me.RadioButton2.TabIndex = 22
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "RyujiNX"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
         'NCAForm
         '
         Me.AllowDrop = True
@@ -321,8 +335,9 @@ Partial Class NCAForm
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(835, 347)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.RadioButton2)
+        Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.RomFSOpt)
-        Me.Controls.Add(Me.RomFSExtStr)
         Me.Controls.Add(Me.RomFSName)
         Me.Controls.Add(Me.RomFSStr)
         Me.Controls.Add(Me.RomFSStart)
@@ -366,10 +381,11 @@ Partial Class NCAForm
     Friend WithEvents OutFolderStr As Label
     Friend WithEvents ExtStart As Button
     Friend WithEvents KeyManLaunch As Button
-    Friend WithEvents RomFSExtStr As Label
     Friend WithEvents RomFSName As TextBox
     Friend WithEvents RomFSStr As Label
     Friend WithEvents RomFSStart As Button
     Friend WithEvents RomFSOpt As RadioButton
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
 End Class
