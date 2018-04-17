@@ -217,6 +217,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="PFS0Form.resx">
+      <DependentUpon>PFS0Form.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RomFSForm.resx">
       <DependentUpon>RomFSForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +248,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\NSPDrop.png" />
     <None Include="Resources\RomFSDrop.png" />
     <None Include="Resources\XCIDrop.png" />
     <None Include="Resources\NCADrop.png" />

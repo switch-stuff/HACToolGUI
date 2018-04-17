@@ -1,4 +1,6 @@
-﻿Public Class NCAForm
+﻿Imports System.IO.File
+Imports System.IO.Directory
+Public Class NCAForm
     Private Sub OpenNCA_Click(sender As Object, e As EventArgs) Handles OpenNCA.Click
         SelectNCA.ShowDialog()
         FileName.Text = SelectNCA.FileName
@@ -7,6 +9,7 @@
         End If
     End Sub
     Private Sub PlainOpt_CheckedChanged(sender As Object, e As EventArgs) Handles PlainOpt.CheckedChanged
+        WriteAllText("prefs.dat", "0")
         RadioButton1.Enabled = False
         RadioButton2.Enabled = False
         RomFSStr.Enabled = False
@@ -21,6 +24,7 @@
         PlainExtStr.Enabled = True
     End Sub
     Private Sub ExtractOpt_CheckedChanged(sender As Object, e As EventArgs) Handles ExtractOpt.CheckedChanged
+        WriteAllText("prefs.dat", "1")
         RadioButton1.Enabled = False
         RadioButton2.Enabled = False
         RomFSStr.Enabled = False
@@ -42,14 +46,14 @@
                 MsgBox("You must type a filename!")
             End If
         Else
-                MsgBox("You must add keys first.")
+            MsgBox("You must add keys first.")
             KeyForm.Show()
         End If
     End Sub
     Private Sub ExtStart_Click(sender As Object, e As EventArgs) Handles ExtStart.Click
         If IO.File.Exists("keys.dat") Then
             If ExtFolderName.Text IsNot "" Then
-                IO.Directory.CreateDirectory(ExtFolderName.Text)
+                CreateDirectory(ExtFolderName.Text)
                 Process.Start("cmd", "/c hactool -k keys.dat " + "--romfsdir=" + ExtFolderName.Text + " " + """" + FileName.Text + """")
             Else
                 MsgBox("You must type a folder name!")
@@ -65,6 +69,7 @@
     End Sub
 
     Private Sub RomFSOpt_CheckedChanged(sender As Object, e As EventArgs) Handles RomFSOpt.CheckedChanged
+        WriteAllText("prefs.dat", "2")
         RadioButton1.Enabled = True
         RadioButton2.Enabled = True
         RomFSStr.Enabled = True
@@ -82,10 +87,12 @@
     Private Sub RomFSStart_Click(sender As Object, e As EventArgs) Handles RomFSStart.Click
         If IO.File.Exists("keys.dat") Then
             If RomFSName.Text IsNot "" Then
-                IO.Directory.CreateDirectory(RomFSName.Text)
+                CreateDirectory(RomFSName.Text)
                 If RadioButton1.Checked = True Then
+                    WriteAllText("prefs.dat", "A")
                     Process.Start("cmd", "/c hactool -k keys.dat " + "--romfs=" + RomFSName.Text + "/RomFS.romfs" + " --section0dir=" + RomFSName.Text + " " + """" + FileName.Text + """")
                 Else
+                    WriteAllText("prefs.dat", "B")
                     Process.Start("cmd", "/c hactool -k keys.dat " + "--romfs=" + RomFSName.Text + "/game.istorage" + " --section0dir=" + RomFSName.Text + " " + """" + FileName.Text + """")
                 End If
             Else
@@ -106,6 +113,18 @@
 
     Private Sub NCAForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.AllowDrop = True
+        If ReadAllText("prefs.dat") = "0" Then
+            PlainOpt.Checked = True
+        ElseIf ReadAllText("prefs.dat") = "1" Then
+            ExtractOpt.Checked = True
+        ElseIf ReadAllText("prefs.dat") = "2" Then
+            RomFSOpt.Checked = True
+        ElseIf ReadAllText("prefs.dat") = "A" Then
+            RadioButton1.Checked = True
+        ElseIf ReadAllText("prefs.dat") = "B" Then
+            RadioButton2.Checked = True
+        End If
+
     End Sub
 
     Private Sub NCAForm_DragEnter(sender As Object, e As DragEventArgs) Handles MyBase.DragEnter

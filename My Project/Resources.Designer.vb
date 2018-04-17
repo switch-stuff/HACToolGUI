@@ -73,6 +73,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property NSPDrop() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("NSPDrop", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property RomFSDrop() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("RomFSDrop", resourceCulture)

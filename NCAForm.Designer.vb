@@ -37,7 +37,6 @@ Partial Class NCAForm
         Me.ExtFolderName = New System.Windows.Forms.TextBox()
         Me.OutFolderStr = New System.Windows.Forms.Label()
         Me.ExtStart = New System.Windows.Forms.Button()
-        Me.KeyManLaunch = New System.Windows.Forms.Button()
         Me.RomFSName = New System.Windows.Forms.TextBox()
         Me.RomFSStr = New System.Windows.Forms.Label()
         Me.RomFSStart = New System.Windows.Forms.Button()
@@ -45,6 +44,7 @@ Partial Class NCAForm
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.KeyManLaunch = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -89,6 +89,8 @@ Partial Class NCAForm
         'SelectNCA
         '
         Me.SelectNCA.FileName = "Select a file."
+        Me.SelectNCA.InitialDirectory = "/"
+        Me.SelectNCA.RestoreDirectory = True
         '
         'PlainOpt
         '
@@ -221,21 +223,6 @@ Partial Class NCAForm
         Me.ExtStart.Text = "Start"
         Me.ExtStart.UseVisualStyleBackColor = False
         '
-        'KeyManLaunch
-        '
-        Me.KeyManLaunch.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.KeyManLaunch.FlatAppearance.BorderSize = 0
-        Me.KeyManLaunch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.KeyManLaunch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.KeyManLaunch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.KeyManLaunch.ForeColor = System.Drawing.Color.White
-        Me.KeyManLaunch.Location = New System.Drawing.Point(12, 4)
-        Me.KeyManLaunch.Name = "KeyManLaunch"
-        Me.KeyManLaunch.Size = New System.Drawing.Size(812, 56)
-        Me.KeyManLaunch.TabIndex = 14
-        Me.KeyManLaunch.Text = "Open Key Manager"
-        Me.KeyManLaunch.UseVisualStyleBackColor = False
-        '
         'RomFSName
         '
         Me.RomFSName.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
@@ -327,6 +314,21 @@ Partial Class NCAForm
         Me.RadioButton2.Text = "RyujiNX"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
+        'KeyManLaunch
+        '
+        Me.KeyManLaunch.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.KeyManLaunch.FlatAppearance.BorderSize = 0
+        Me.KeyManLaunch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.KeyManLaunch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.KeyManLaunch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.KeyManLaunch.ForeColor = System.Drawing.Color.White
+        Me.KeyManLaunch.Location = New System.Drawing.Point(12, 4)
+        Me.KeyManLaunch.Name = "KeyManLaunch"
+        Me.KeyManLaunch.Size = New System.Drawing.Size(812, 56)
+        Me.KeyManLaunch.TabIndex = 14
+        Me.KeyManLaunch.Text = "Open Key Manager"
+        Me.KeyManLaunch.UseVisualStyleBackColor = False
+        '
         'NCAForm
         '
         Me.AllowDrop = True
@@ -380,7 +382,6 @@ Partial Class NCAForm
     Friend WithEvents ExtFolderName As TextBox
     Friend WithEvents OutFolderStr As Label
     Friend WithEvents ExtStart As Button
-    Friend WithEvents KeyManLaunch As Button
     Friend WithEvents RomFSName As TextBox
     Friend WithEvents RomFSStr As Label
     Friend WithEvents RomFSStart As Button
@@ -388,4 +389,5 @@ Partial Class NCAForm
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents KeyManLaunch As Button
 End Class

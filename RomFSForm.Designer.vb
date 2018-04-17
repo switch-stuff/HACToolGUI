@@ -109,6 +109,8 @@ Partial Class RomFSForm
         'SelectRomFS
         '
         Me.SelectRomFS.FileName = "Select a file..."
+        Me.SelectRomFS.InitialDirectory = "/"
+        Me.SelectRomFS.RestoreDirectory = True
         '
         'PictureBox1
         '

@@ -51,6 +51,7 @@ Partial Class KeyForm
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TKEKStr = New System.Windows.Forms.Label()
         Me.TKEK = New System.Windows.Forms.TextBox()
+        Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -138,7 +139,7 @@ Partial Class KeyForm
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.DimGray
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Save})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.Save})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1084, 37)
@@ -342,6 +343,14 @@ Partial Class KeyForm
         Me.TKEK.Size = New System.Drawing.Size(838, 24)
         Me.TKEK.TabIndex = 31
         '
+        'OpenToolStripMenuItem
+        '
+        Me.OpenToolStripMenuItem.Font = New System.Drawing.Font("Candara", 9.0!)
+        Me.OpenToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(80, 33)
+        Me.OpenToolStripMenuItem.Text = "Open"
+        '
         'KeyForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
@@ -416,4 +425,5 @@ Partial Class KeyForm
     Friend WithEvents Label12 As Label
     Friend WithEvents TKEKStr As Label
     Friend WithEvents TKEK As TextBox
+    Friend WithEvents OpenToolStripMenuItem As ToolStripMenuItem
 End Class

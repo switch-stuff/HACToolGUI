@@ -73,6 +73,8 @@ Partial Class XCIForm
         'SelectXCI
         '
         Me.SelectXCI.FileName = "Select a file."
+        Me.SelectXCI.InitialDirectory = "/"
+        Me.SelectXCI.RestoreDirectory = True
         '
         'InStr
         '

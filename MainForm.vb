@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.IO.File
 Imports System.Net
 Public Class MainForm
     Dim keyorder() As Object = {System.Windows.Forms.Keys.Up, System.Windows.Forms.Keys.Up,
@@ -8,13 +9,12 @@ System.Windows.Forms.Keys.Left, System.Windows.Forms.Keys.Right,
 System.Windows.Forms.Keys.B, System.Windows.Forms.Keys.A}
     Dim index As Integer = 0
     Dim sequence() As Boolean = {False, False, False, False, False, False, False, False, False, False}
-    Dim UpdateCheck As String = "http://simolabs.com.au/hactoolgui/currentversion.txt"
-    Dim Notify As String = "http://simolabs.com.au/hactoolgui/news.txt"
+    Dim UpdateCheck As String = "https://pastebin.com/raw/YiPFq7qB"
     Dim Web As WebClient = New WebClient()
     Dim Rd As StreamReader = New StreamReader(Web.OpenRead(UpdateCheck))
-    Dim GBATemp As String = "https://gbatemp.net/threads/release-hactoolgui-v0-1-a-very-simple-gui-for-hactool.499526/"
+    Dim GBATemp As String = "https://gbatemp.net/threads/release-hactoolgui-a-very-simple-gui-for-hactool.499526/"
     Dim LatestVersion As String = Rd.ReadToEnd
-    Dim CurrentVersion As String = "0.2c"
+    Dim CurrentVersion As String = "0.3"
     Public Sub New()
         InitializeComponent()
         Me.KeyPreview = True
@@ -41,19 +41,20 @@ System.Windows.Forms.Keys.B, System.Windows.Forms.Keys.A}
     End Sub
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If IO.File.Exists("hactool.exe") Then
+        If Exists("hactool.exe") Then
         Else
             MsgBox("You must put hactool.exe and its dependencies in this directory.")
             Close()
         End If
-        If IO.File.Exists("easter.egg") Then
+        If Exists("easter.egg") Then
             MsgBox("You found the second easter egg!" + vbNewLine + "Gotta catch 'em all!")
         Else
         End If
-        If LatestVersion = CurrentVersion Then
-            Label1.Text = "HACToolGUI is up to date."
+        If Exists("keys.dat") Then
+            LaunchNCA.Enabled = True
         Else
-            Label1.Text = "Version " + LatestVersion + " is available."
+            MsgBox("To use NCA extraction features, please fill in key data!")
+            KeyForm.Show()
         End If
     End Sub
 
@@ -90,9 +91,18 @@ System.Windows.Forms.Keys.B, System.Windows.Forms.Keys.A}
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+        If LatestVersion = CurrentVersion Then
+            Label1.Text = "HACToolGUI is up to date."
+        Else
+            Label1.Text = "Version " + LatestVersion + " is available."
+        End If
         If Label1.Text = "HACToolGUI is up to date." Then
         Else
             Process.Start(GBATemp)
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        KeyForm.Show()
     End Sub
 End Class

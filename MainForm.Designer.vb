@@ -36,6 +36,7 @@ Partial Class MainForm
         Me.Button10 = New System.Windows.Forms.Button()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'QuestionStr
@@ -52,12 +53,13 @@ Partial Class MainForm
         'LaunchNCA
         '
         Me.LaunchNCA.BackColor = System.Drawing.Color.DimGray
+        Me.LaunchNCA.Enabled = False
         Me.LaunchNCA.FlatAppearance.BorderSize = 0
         Me.LaunchNCA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.LaunchNCA.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LaunchNCA.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LaunchNCA.ForeColor = System.Drawing.Color.White
-        Me.LaunchNCA.Location = New System.Drawing.Point(12, 85)
+        Me.LaunchNCA.Location = New System.Drawing.Point(12, 192)
         Me.LaunchNCA.Name = "LaunchNCA"
         Me.LaunchNCA.Size = New System.Drawing.Size(274, 137)
         Me.LaunchNCA.TabIndex = 1
@@ -72,7 +74,7 @@ Partial Class MainForm
         Me.LaunchXCI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LaunchXCI.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LaunchXCI.ForeColor = System.Drawing.Color.White
-        Me.LaunchXCI.Location = New System.Drawing.Point(292, 85)
+        Me.LaunchXCI.Location = New System.Drawing.Point(292, 192)
         Me.LaunchXCI.Name = "LaunchXCI"
         Me.LaunchXCI.Size = New System.Drawing.Size(270, 137)
         Me.LaunchXCI.TabIndex = 2
@@ -88,7 +90,7 @@ Partial Class MainForm
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(292, 371)
+        Me.Button3.Location = New System.Drawing.Point(292, 478)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(270, 137)
         Me.Button3.TabIndex = 4
@@ -104,7 +106,7 @@ Partial Class MainForm
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(12, 371)
+        Me.Button4.Location = New System.Drawing.Point(12, 478)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(274, 137)
         Me.Button4.TabIndex = 3
@@ -114,13 +116,12 @@ Partial Class MainForm
         'Button5
         '
         Me.Button5.BackColor = System.Drawing.Color.DimGray
-        Me.Button5.Enabled = False
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Location = New System.Drawing.Point(292, 228)
+        Me.Button5.Location = New System.Drawing.Point(292, 335)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(270, 137)
         Me.Button5.TabIndex = 6
@@ -135,7 +136,7 @@ Partial Class MainForm
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Location = New System.Drawing.Point(12, 228)
+        Me.Button6.Location = New System.Drawing.Point(12, 335)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(274, 137)
         Me.Button6.TabIndex = 5
@@ -151,7 +152,7 @@ Partial Class MainForm
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Location = New System.Drawing.Point(292, 514)
+        Me.Button7.Location = New System.Drawing.Point(292, 621)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(270, 137)
         Me.Button7.TabIndex = 8
@@ -167,7 +168,7 @@ Partial Class MainForm
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.ForeColor = System.Drawing.Color.White
-        Me.Button8.Location = New System.Drawing.Point(12, 514)
+        Me.Button8.Location = New System.Drawing.Point(12, 621)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(274, 137)
         Me.Button8.TabIndex = 7
@@ -183,7 +184,7 @@ Partial Class MainForm
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Location = New System.Drawing.Point(292, 657)
+        Me.Button9.Location = New System.Drawing.Point(292, 764)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(270, 137)
         Me.Button9.TabIndex = 10
@@ -199,7 +200,7 @@ Partial Class MainForm
         Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button10.ForeColor = System.Drawing.Color.White
-        Me.Button10.Location = New System.Drawing.Point(12, 657)
+        Me.Button10.Location = New System.Drawing.Point(12, 764)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(274, 137)
         Me.Button10.TabIndex = 9
@@ -218,18 +219,34 @@ Partial Class MainForm
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(22, 803)
+        Me.Label1.Location = New System.Drawing.Point(22, 910)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(465, 51)
+        Me.Label1.Size = New System.Drawing.Size(439, 51)
         Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Checking for updates..."
+        Me.Label1.Text = "    Check for updates?"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.DimGray
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(12, 90)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(550, 96)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Open Key Manager"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.Gray
-        Me.ClientSize = New System.Drawing.Size(574, 869)
+        Me.ClientSize = New System.Drawing.Size(574, 972)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button9)
         Me.Controls.Add(Me.Button10)
@@ -265,4 +282,5 @@ Partial Class MainForm
     Friend WithEvents Button10 As Button
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button1 As Button
 End Class
