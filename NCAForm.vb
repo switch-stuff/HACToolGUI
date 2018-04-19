@@ -113,6 +113,9 @@ Public Class NCAForm
 
     Private Sub NCAForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.AllowDrop = True
+        If IO.File.Exists("prefs.dat") = False Then
+            IO.File.Create("prefs.dat").Close()
+        End If
         If ReadAllText("prefs.dat") = "0" Then
             PlainOpt.Checked = True
         ElseIf ReadAllText("prefs.dat") = "1" Then
@@ -123,6 +126,8 @@ Public Class NCAForm
             RadioButton1.Checked = True
         ElseIf ReadAllText("prefs.dat") = "B" Then
             RadioButton2.Checked = True
+        ElseIf ReadAllText("prefs.dat") = "" Then
+
         End If
 
     End Sub

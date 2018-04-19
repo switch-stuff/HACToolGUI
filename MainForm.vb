@@ -14,7 +14,7 @@ System.Windows.Forms.Keys.B, System.Windows.Forms.Keys.A}
     Dim Rd As StreamReader = New StreamReader(Web.OpenRead(UpdateCheck))
     Dim GBATemp As String = "https://gbatemp.net/threads/release-hactoolgui-a-very-simple-gui-for-hactool.499526/"
     Dim LatestVersion As String = Rd.ReadToEnd
-    Dim CurrentVersion As String = "0.3"
+    Dim CurrentVersion As String = "0.3a"
     Public Sub New()
         InitializeComponent()
         Me.KeyPreview = True
